@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.whu.dao.DefaultMapper">
+
+    <!--&lt;!&ndash; 解决表名与字段不匹配 &ndash;&gt;-->
+    <!--<resultMap type="User" id="userResultMap">-->
+        <!--<id property="id" column="id"/>-->
+        <!--<result property="username" column="user_name"/>-->
+        <!--<result property="password" column="password"/>-->
+        <!--<result property="age" column="age"/>-->
+    <!--</resultMap>-->
+    <!--<select id="findAllUser" resultMap="userResultMap">-->
+        <!--select * from user_t-->
+    <!--</select>-->
+</mapper>

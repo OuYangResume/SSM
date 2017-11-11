@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--&lt;!&ndash;  加载属性文件&ndash;&gt;-->
+    <!--<properties resource="jdbc.properties"></properties>-->
+    <!-- 全局参数配置，在需要时候进行配置 -->
+    <settings>
+        <!-- changes from the defaults for testing -->
+        <setting name="cacheEnabled" value="false" />
+        <setting name="useGeneratedKeys" value="true" />
+        <setting name="defaultExecutorType" value="REUSE" />
+    </settings>
+    <!-- 别名设置 -->
+    <!-- 单个配置
+             type:类型路径
+             alias:别名-->
+    <!-- <typeAliases>
+            <typeAlias type="cn.edu.hpu.ssm.po.User" alias="user"/>
+    </typeAliases> -->
+    <!-- 批量设置(推荐使用)
+            指定包名，mybatis自动扫描扫描po类，自动定义别名。默认为类名（首字母大写或小写） -->
+    <!--<typeAliases>-->
+        <!--<package name="cn.edu.hpu.ssm.po"/>-->
+    <!--</typeAliases>-->
+
+
+     <!--&lt;!&ndash;和spring整合后 environments配置将废除&ndash;&gt;-->
+    <!--<environments default="development">-->
+        <!--<environment id="development">-->
+            <!--&lt;!&ndash; 使用jdbc事务管理,事物控制有mybatis控制&ndash;&gt;-->
+            <!--<transactionManager type="JDBC" />-->
+            <!--&lt;!&ndash; 数据库连接池，由mybatis管理&ndash;&gt;-->
+            <!--<dataSource type="POOLED">-->
+                <!--<property name="driver" value="${jdbc.driver}" />-->
+                <!--<property name="url" value="${jdbc.url}" />-->
+                <!--<property name="username" value="${jdbc.username}" />-->
+                <!--<property name="password" value="${jdbc.password}" />-->
+            <!--</dataSource>-->
+        <!--</environment>-->
+    <!--</environments>-->
+
+    <!-- 配置mapper，加载映射文件 -->
+    <!-- <mappers>
+              <mapper resource="sqlmap/User.xml"/>
+              <mapper resource="mapper/UserMapper.xml"/>
+         </mappers> -->
+    <!-- 通过mapper接口，加载映射文件
+        规范：mapper接口名必须与mapper.xml文件名相同，且放在同一包下
+                前提是使用mapper代理的方式 -->
+    <!--<mappers>-->
+        <!--<mapper class="cn.edu.hpu.ssm.mapper.UserMapper"/>-->
+        <!--<mapper class="cn.edu.hpu.ssm.mapper.OrdersMapperCustom"/>-->
+    <!--</mappers>-->
+    <!--<mappers>-->
+        <!--<mapper resource="cn/edu/whu/mapper/UserMapper.xml" />-->
+    <!--</mappers>-->
+</configuration>
