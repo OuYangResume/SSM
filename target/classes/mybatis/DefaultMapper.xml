@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.whu.dao.DefaultMapper">
+    <resultMap id="baseMap" type="cn.edu.whu.bean.School">
+        <id column="ID" property="id"></id>
+        <result column="Type" property="type"></result>
+        <result column="Name" property="name"></result>
+        <result column="X" property="X"></result>
+        <result column="Y" property="y"></result>
+    </resultMap>
+    <!--单条插入-->
+    <insert id="insertInfo" parameterType="cn.edu.whu.bean.School" >
+       INSERT  into  specialsubject(Type,Name,X,Y) VALUES (#{type},#{name},#{x},#{y});
+    </insert>
+    <!--批量插入-->
+    <insert id="insertSchoolInfo" parameterType="java.util.List">
+        INSERT INTO  specialsubject(Type,NAME,X,Y) VALUES
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.type},#{item.name},#{item.x},#{item.y})
+        </foreach>
+    </insert>
+</mapper>

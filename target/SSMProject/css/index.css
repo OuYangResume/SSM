@@ -1,0 +1,138 @@
+.container-fluid{
+    padding-left: 0px;
+    padding-right: 0px;
+    height:100%;
+}
+.background{
+    padding:0px;
+    width:100%;
+    height:100%;
+    left:0px;
+    top:0px;
+
+    position:absolute;
+    z-index: 0;
+}
+.coverage{
+    position: absolute;
+    left:0px;
+    top:0px;
+    width:100%;
+    height:100%;
+    display: block;
+    background: #000000;
+    filter:alpha(Opacity=40);
+    opacity:0.4;
+    text-align: center;
+    z-index: 1;
+}
+.intro-text{
+    width:100%;
+    height:100px;
+    padding:0;
+    color:#ffffff;
+    display: block;
+    position: absolute;
+    left:0px;
+    top:50%;
+    margin-top:-50px;
+    text-align: center;
+    z-index: 2;
+}
+.intro-text h1{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 65px;
+    line-height: 1em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    text-shadow: 0 0 12px rgba(0,0,0,.6);
+
+}
+.intro-text h2{
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+    font-weight: 300;
+    margin-bottom: 5px;
+    letter-spacing: .046em;
+
+}
+.logo{
+    margin-right: 0;
+    margin-left: 0;
+    top:10px;
+    left: 10px;
+    position: absolute;
+    z-index: 100;
+}
+.slider-nav{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    z-index: 2;
+    text-align: center;
+    height: 100px;
+    background-color: rgba(0, 1, 1, 0.5)
+}
+.menu-inner-block{
+    display: block;
+    margin-top:10px;
+}
+.slider-nav li::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 1px;
+    background-color: rgba(238, 250, 253, .2);
+    top: 0;
+    right: 0;
+    height: 60%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.slider-nav li a p{
+    color: #ffffff;
+}
+.slider-nav li a h1 {
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #ffffff;
+    text-transform: uppercase;
+    vertical-align: middle;
+    margin-bottom: 10px;
+}
+.slider-nav li a:hover h2 {
+    color: #26bce7;
+}
+.slider-nav li a:hover span {
+    color: #26bce7;
+}
+
+.slider-nav li:hover::before {
+    content: '';
+    opacity: 1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #26bce7;
+    background-color: rgba(16, 22, 30, .8);
+    box-shadow: inset 0 1px 0 currentColor;
+}
+#home-menu{
+    padding: 0;
+    width: 100%;
+    margin: 0;
+    height:100%;
+}
+#home-menu li{
+    height:100%;
+}
+.swiper-container{
+    height:100%;
+    width:100%;
+}
+.swiper-slide{
+    overflow: hidden;
+}

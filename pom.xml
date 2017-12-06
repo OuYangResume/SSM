@@ -117,7 +117,12 @@
       <artifactId>log4j</artifactId>
       <version>${log4j.version}</version>
     </dependency>
-
+    <!-- 解析excel -->
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi</artifactId>
+      <version>3.9</version>
+    </dependency>
 
     <!-- 格式化对象，方便输出日志 -->
     <dependency>
@@ -167,6 +172,12 @@
       <artifactId>catalina</artifactId>
       <version>6.0.26</version>
       <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>RELEASE</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
   <build>
