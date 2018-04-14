@@ -3,13 +3,16 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:p="http://www.springframework.org/schema/p"
        xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
 	http://www.springframework.org/schema/context
 	http://www.springframework.org/schema/context/spring-context-3.1.xsd
 	http://www.springframework.org/schema/mvc
-	http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+	http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+    <!-- 启动对@AspectJ注解的支持 -->
+    <aop:aspectj-autoproxy/>
+
     <!-- 自动扫描 -->
     <context:component-scan base-package="cn.edu.whu" />
     <!-- 引入配置文件 -->
@@ -44,7 +47,8 @@
         <!-- 指定需要别名的类所在的包名 ，或者在mybatis中配置-->
        <!-- <property name="typeAliasesPackage" value="cn.edu.whu.bean"/>-->
         <!-- 扫描所有xml文件，或者在mybatis中配置 -->
-        <property name="mapperLocations" value="classpath:mybatis/*.xml" />
+        <!--<property name="mapperLocations" value="classpath:cu//*.xml" />-->
+        <property name="mapperLocations" value="classpath:cn/edu/whu/dao/*.xml"></property>
     </bean>
 
     <!-- DAO接口所在包名，Spring会自动查找其下的类 -->
@@ -58,4 +62,9 @@
         <property name="dataSource" ref="dataSource" />
     </bean>
 
+    <bean id="taskExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+        <property name="corePoolSize" value="5" />
+        <property name="maxPoolSize" value="10" />
+        <property name="WaitForTasksToCompleteOnShutdown" value="true" />
+    </bean>
 </beans>
